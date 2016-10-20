@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-deploy-consul-config",
   "version": "0.1.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An EmberCLI Deploy plugin to retrieve config values from Hashicorp's Consul",
   "directories": {
     "doc": "doc",
     "test": "tests"
