@@ -123,4 +123,6 @@ This plugin has no prerequisites.
 $ npm test
 ```
 
+<p align="center"><sub>Made with :heart: by The Kayako Engineering Team</sub></p>
+
 [1]: http://ember-cli-deploy.com/plugins "Plugin Documentation"
