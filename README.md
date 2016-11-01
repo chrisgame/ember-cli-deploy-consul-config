@@ -95,6 +95,12 @@ Whether or not to enable HTTPS.
 
 *Default:* `true`
 
+### token
+
+An ACL token to be included with each request to Consul.
+
+*Default:* `null`
+
 ### keys (required)
 
 An object containing properties that map the keys on Consul to the `process.env`

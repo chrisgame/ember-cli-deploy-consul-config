@@ -16,7 +16,8 @@ module.exports = {
       defaultConfig: {
         host: 'localhost',
         port: 8500,
-        secure: true
+        secure: true,
+        token: null
       },
 
       requiredConfig: ['keys'],
@@ -55,18 +56,24 @@ module.exports = {
         var host    = this.readConfig('host');
         var port    = this.readConfig('port');
         var secure  = this.readConfig('secure');
+        var token   = this.readConfig('token');
 
         var options = {
           host: host,
           port: port,
           secure: secure,
-          promisify: true
+          promisify: true,
+          defaults: {}
         };
+
+        if (token) {
+          options.defaults.token = token;
+        }
 
         var client;
 
         if (context._consulLib) {
-          client = context._consulLib;
+          client = context._consulLib(options).kv;
         } else {
           client = consul(options).kv;
         }

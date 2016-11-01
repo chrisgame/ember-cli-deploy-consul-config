@@ -98,7 +98,8 @@ describe('Consul Config | configure hook', function() {
         keys: { foo: 'bar' },
         host: 'foo',
         port: 1234,
-        secure: false
+        secure: false,
+        token: '1111'
       };
     });
 
@@ -160,6 +161,26 @@ describe('Consul Config | configure hook', function() {
       instance.configure(context);
 
       assert.ok(instance.readConfig('secure'));
+    });
+
+    it('provides default token', function() {
+      var instance = subject.createDeployPlugin({
+        name: 'consul-config'
+      });
+
+      delete config.token;
+
+      var context = {
+        ui: mockUi,
+        config: {
+          'consul-config': config
+        }
+      };
+
+      instance.beforeHook(context);
+      instance.configure(context);
+
+      assert.isNull(instance.readConfig('token'));
     });
   });
 });
