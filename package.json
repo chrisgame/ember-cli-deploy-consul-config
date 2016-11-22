@@ -53,7 +53,7 @@
   "dependencies": {
     "consul": "0.27.0",
     "ember-cli-babel": "5.1.6",
-    "ember-cli-deploy-plugin": "0.2.6"
+    "ember-cli-deploy-plugin": "0.2.9"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
