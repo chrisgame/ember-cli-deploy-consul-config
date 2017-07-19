@@ -41,7 +41,7 @@ ENV['consul-config'] = {
 
 ```javascript
 ENV.s3 = {
-  awsAccessToken: process.AWS_ACCESS_TOKEN
+  awsAccessToken: process.env.AWS_ACCESS_TOKEN
 }
 ```
 
